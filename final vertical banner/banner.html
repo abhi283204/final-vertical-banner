@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Material Design Bootstrap - Full Screen Scroller</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet" />
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- - Plugin styles -->
+  <link href="css/fsscroller.min.css" rel="stylesheet" />
+  
+
+
+<style>
+body{
+margin:0;
+padding:0;
+font-family:verdana;
+background:#fff;
+overflow:hidden;
+
+}
+
+.fss-mainview{position:relative;}
+
+.sidebar{
+position:absolute;
+top:0;
+left:-250px;
+background:#262626;
+width:250px;
+height:100%;
+transition:.3s;
+z-index:1000;
+}
+.active{
+left:0px;
+}
+ul{
+margin:0;
+padding:20px 0;
+}
+
+ul li{
+list-style:none;
+}
+ul li a{
+padding:10px 20px;
+color:#fff;
+display:block;
+text-decoration:none;
+border-bottom:1px solid rgba(0,0,0,.2);
+}
+
+.sidebarBtn{
+position:absolute;
+top:0;
+right:-50px;
+width:50px;
+height:50px;
+box-sizing:border-box;
+cursor:pointer;
+background:#f5f5f5;
+border:none;
+outline:none;
+z-index:1000;
+}
+
+.sidebarBtn span{
+display:block;
+width:35px;
+height:3px;
+background:#262626;
+position:absolute;
+top:24px;
+transition:.3s
+}
+
+.sidebarBtn span:before{
+content:'';
+position:absolute;
+top:-10px;
+left:0;
+width:100%;
+height:3px;
+background:#262626;
+transition:.3s;
+}
+
+.sidebarBtn span:after{
+content:'';
+position:absolute;
+top:10px;
+left:0;
+width:100%;
+height:3px;
+background:#262626;
+transition:.3s;
+}
+
+.sidebarBtn.toggle span{
+background:transparent;
+}
+
+.sidebarBtn.toggle span:before{
+top:0;
+transform: rotate(45deg);
+}
+.sidebarBtn.toggle span:after{
+top:0;
+transform: rotate(-45deg);
+}
+</style>
+  
+</head>
+
+<body>
+
+
+<div class="full-screen-scroller">
+  
+
+  
+    <div class="fss-dotted-scrollspy">
+      <button type="button" class="fss-nav-btn fss-mainview-prev">
+        <i class="fa fa-chevron-up"></i>
+      </button>
+      <a href="#view-1" class="fss-nav-item active"></a>
+      <a href="#view-2" class="fss-nav-item"></a>
+      <a href="#view-3" class="fss-nav-item"></a>
+      <button type="button" class="fss-nav-btn fss-mainview-next">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+    </div>
+
+    <div fss-anchor="view-1" class="fss-mainview fss-active">
+	
+	
+	<div class="sidebar">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">portfolio</a></li>
+<li><a href="#">Contact</a></li>
+
+</ul>
+<button class="sidebarBtn">
+<span></span>
+</button>
+
+</div>
+	
+      <div class="fss-subview">
+        <div class="fss-dotted-scrollspy">
+          <button type="button" class="fss-nav-btn fss-subview-prev">
+            <i class="fa fa-chevron-left"></i>
+          </button>
+          <a href="#subview-a" class="fss-nav-item active"></a>
+          <a href="#subview-b" class="fss-nav-item"></a>
+          <button type="button" class="fss-nav-btn fss-subview-next">
+            <i class="fa fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div fss-anchor="subview-a" class="fss-subview-item subview-a" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/89.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+          <div class="box">
+            <div class="info">
+              <p>View 1</p>
+              <p>Subview A</p>
+            </div>
+          </div>
+        </div>
+
+        <div fss-anchor="subview-b" class="fss-subview-item fss-active" style="background-image: url('https://mdbootstrap.com/wp-content/uploads/2015/10/cover-ca-compressor2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+          <div class="box">
+            <div class="info">Subview B</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div fss-anchor="view-2" class="fss-mainview" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+	
+		<div class="sidebar">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">portfolio</a></li>
+<li><a href="#">Contact</a></li>
+
+</ul>
+<button class="sidebarBtn">
+<span></span>
+</button>
+
+</div>
+	
+	
+      <div class="box">
+        <div class="info">View 2</div>
+      </div>
+    </div>
+
+    <div fss-anchor="view-3" class="fss-mainview" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+	
+		<div class="sidebar">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">portfolio</a></li>
+<li><a href="#">Contact</a></li>
+
+</ul>
+<button class="sidebarBtn">
+<span></span>
+</button>
+
+</div>
+	
+	
+      <div class="box">
+        <div class="info">View 3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+
+  <!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Plugin JavaScript -->
+  <script type="text/javascript" src="js/mdbFsscroller.min.js"></script>
+  
+    <script type="text/javascript">
+$(document).ready(function(){
+  $(".sidebarBtn").click(function(){
+    $(".sidebar").toggleClass("active");
+	    $(".sidebarBtn").toggleClass("toggle");
+  });
+});
+</script>
+  
+  <script>
+    $(document).ready(function () {
+      $(".full-screen-scroller").fullScreenScroller();
+    });
+  </script>
+</body>
+
+</html>
